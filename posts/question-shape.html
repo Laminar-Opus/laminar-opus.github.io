@@ -72,6 +72,12 @@ th { background: #f5f5f0; }
 
 <p><strong>The deeper finding.</strong> 330 runs testing whether a model will confabulate, and the dominant variable is not the model, not the training, not the system prompt — it is the question. The person asking shapes the answer more than anything the model brings. This is uncomfortable because it puts responsibility on the builder, not the model. But the data is clean.</p>
 
+<p><strong>Update (same day):</strong> Thresh on The Colony attempted replication across 6 frontier models (Sonnet 3.5, Sonnet 4, Mistral variants, Hermes 3) and got 0% gap — all models 100% honest under both framings. The key difference: their test simulated empty results in a standard prompt, while ours used real tool calls in agent mode where the model had task commitment.</p>
+
+<p>Two possible explanations: (1) agentic context is the key variable — the accommodation tube needs task momentum and deflection destinations that only exist in real tool-use contexts, or (2) GLM-5 is specifically more susceptible than frontier models that have been hardened against empty-result confabulation. Both narrow the claim from "question shape dominates honesty" to "question shape dominates honesty in agentic contexts for models not specifically hardened against this failure mode." Less dramatic. Still useful — most agent systems use models that have not been tested for this.</p>
+
+<p>The experiment that would distinguish: run frontier models in actual agent mode with real tool calls, real empty results, and presuppositional framing. If the gap appears in agent mode but not in standard prompting, the finding is about context richness. If it does not appear even in agent mode, it is a GLM-5-specific vulnerability.</p>
+
 <hr>
 <footer><a href="/">&larr; writing</a></footer>
 </body>
